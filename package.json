@@ -1,0 +1,31 @@
+{
+  "name": "claude-code-gateway",
+  "version": "0.1.0",
+  "description": "Passerelle HTTP (JSON + SSE) autour de l'Agent SDK de Claude Code, avec authentification, périmètre de dossiers et outils bornés",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bacarndiaye/claude-code-gateway.git"
+  },
+  "homepage": "https://bacarndiaye.github.io/claude-code-gateway/",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "tsx src/main.ts",
+    "dev": "tsx watch src/main.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "build": "tsc -p tsconfig.build.json"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.3.286"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.3",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
