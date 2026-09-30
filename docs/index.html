@@ -199,8 +199,8 @@ npm start    # http://127.0.0.1:8787</code></pre>
     buttons.forEach(function (b) { b.addEventListener('click', function () { setLang(b.dataset.set); }); });
     var saved = null;
     try { saved = localStorage.getItem('ccg-lang'); } catch (e) {}
-    var pref = saved || ((navigator.language || '').slice(0, 2) === 'fr' ? 'fr' : 'en');
-    if (pref !== 'en') setLang(pref);
+    // English unless the visitor explicitly chose French with the FR button.
+    if (saved === 'fr') setLang('fr');
   })();
 </script>
 </body>
